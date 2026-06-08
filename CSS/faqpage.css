@@ -1,0 +1,140 @@
+/* faqpage.css */
+
+.faq-section {
+    background-color: #000;
+    padding: 60px 40px;
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #fff;
+    min-height: 80vh;
+}
+
+/* TOP BAR ALIGNMENT TRICK */
+.faq-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.faq-page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* INTEGRATED SEARCH BOX STYLE */
+.faq-search-container {
+    position: relative;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#faqSearchInput {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 30px 5px 5px;
+    width: 250px;
+    outline: none;
+}
+
+#faqSearchInput::placeholder {
+    color: #555;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* CATEGORY TAB HIGHLIGHT */
+.faq-categories {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    border-bottom: 1px solid #222;
+}
+
+.category-tab {
+    display: inline-block;
+    color: #e62b1e; /* Tab text brand red */
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #e62b1e; /* Line indicator badge beneath text */
+    cursor: pointer;
+}
+
+/* ACCORDION BLOCK ELEMENTS DESIGN */
+.faq-accordion-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background-color: #fff; /* White blocks from your screenshot design */
+    color: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-question-row {
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-question-row h2 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.accordion-arrow {
+    font-size: 1.2rem;
+    color: #333;
+    transition: transform 0.3s ease; /* Rotates smooth upon expansion toggles */
+}
+
+/* SMOOTH SWIPE EXPANSION PANELS EFFECT */
+.faq-answer-panel {
+    max-height: 0; /* Hidden initially by default structural rule */
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.panel-content {
+    padding: 0 30px 25px 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.panel-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+
+/* ACTIVE ACCORDION TOGGLE CLASSES */
+.faq-item.active-item .accordion-arrow {
+    transform: rotate(180deg); /* Flips the chevron arrow right side up */
+}

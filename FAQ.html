@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Css for header and footer-->
+            <link rel="stylesheet" href="./CSS/header.css">
+            <link rel="stylesheet" href="./CSS/footer.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!--End of commend-->
+        <!--CSS for FAQ page-->
+            <link rel="stylesheet" href="./CSS/faqpage.css">
+        <!--end of comment-->
+    </head>
+
+    <body>
+        <header class="pc_header">
+            <div class="logo_container">
+                <a href="./home.html">
+                    <img src="./resources/TEDxUCSI Logo (White).webp" alt="TEDxUCSI University Logo" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="pc-nav">
+                <ul>
+                    <li> <a href="./home.html">Home</a> </li>
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="">2026</a> </li>
+                    <li> <a href="">Team</a> </li>
+                    <li> <a href="">Blog</a> </li>
+                    <li> <a href="">FAQ</a> </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="faq-section">
+            <div class="faq-top-bar">
+                <h1 class="faq-page-title">FREQUENTLY ASKED QUESTION</h1>
+                <div class="faq-search-container">
+                    <input type="text" id="faqSearchInput" placeholder="Looking for something?" onkeyup="filterFAQ()">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </div>
+            </div>
+
+            <div class="faq-categories">
+                <span class="category-tab active">General</span>
+            </div>
+
+            <div class="faq-accordion-list">
+                
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>WHAT IS THE TEDxUCSI UNIVERSITY THEME FOR THIS YEAR?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>The theme for this year is "Reading Beyond the Line". Oftentimes, we view the world as inherently black or white, good or bad, leaving little room for the in-betweens, or what goes beyond our own perspectives. Reading Beyond the Lines challenges us to question assumptions, uncover hidden meanings, and discover the deeper truths that shape how we think, feel, and understand.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>WHEN DO TEDxUCSISPEAKER SPEAKER APPLICATION OPEN?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>Speaker applications are currently open until June 15th at 11:59pm - <a href="https://forms.gle/yah7RJnxcMY6eNtT9" target="_blank">APPLY HERE</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>WHO IS THIS EVENT FOR?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>PLACE HOLDER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>WHAT TIME DO DOORS OPEN?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>PLACE HOLDER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>WILL FOOD BE PROVIDED?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>PLACE HOLDER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>How can I request accessibility/accommodations/special needs?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>PLACE HOLDER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>HOW DO I GET THERE? WHERE DO I PARK?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>PLACE HOLDER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question-row" onclick="toggleFAQ(this)">
+                        <h2>WILL I BE PHOTOGRAPHED OR RECORDED?</h2>
+                        <i class="fa-solid fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <div class="panel-content">
+                            <p>PLACE HOLDER</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            
+            <div class="footer-logo-container">
+                <img src="./resources/TEDxUCSI Logo (White).webp" alt="TEDxUCSI University Logo" class="footer-tedx-logo">
+            </div>
+
+            <div class="contact-section">
+                <h3>CONTACT US</h3>
+                <div class="social-media-icons">
+                    <a href="mailto:tedxucsi2026@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/tedxucsi2026?igsh=a2pyb3RjNTJsa2dx"  target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/tedx-ucsi-university-1381083b3/"  target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@tedxucsi20264?_r=1&_t=ZS-96Vn5EjVBw5"  target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <p class="license-text"> THIS INDEPENDENT TEDx EVENT IS OPERATED UNDER LICENSE FROM TED.</p>
+        </footer>
+
+        <script src="./Javascript/faq.js"></script>
+    </body>
+</html>
