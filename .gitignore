@@ -1,0 +1,11 @@
+# Exclude your local project asset folder completely
+resources/
+
+# Exclude source design files if you keep them in this project
+*.psd
+*.ai
+*.fig
+
+# Exclude system-generated junk files
+.DS_Store
+Thumbs.db
