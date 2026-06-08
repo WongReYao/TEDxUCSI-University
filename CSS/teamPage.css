@@ -1,0 +1,84 @@
+/* teampage.css */
+
+.team-section {
+    background-color: #000; /* Dark background matching the theme */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.team-page-title {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+/* THE GRID CONTAINER */
+.team-grid {
+    display: grid;
+    /* Automatically creates columns that are at least 280px wide */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; /* Uniform horizontal and vertical spacing between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* INDIVIDUAL TEAM CARDS */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Square Photo Frame matching your image layout */
+.team-img-container {
+    width: 100%;
+    max-width: 260px; /* Controls frame size */
+    aspect-ratio: 1 / 1; /* Forces it to be a perfect square */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents stretching, crops cleanly */
+    display: block;
+}
+
+/* Typography styles matching image_0519ed.jpg */
+.member-name {
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.member-role {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    color: #e62b1e; /* Iconic TED Red */
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.member-info {
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #ccc; /* Slightly muted white */
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-bottom: 4px;
+}
+
+.member-fact {
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #aaa; /* Soft gray for subtle secondary text */
+    font-size: 0.9rem;
+    font-style: italic;
+}
