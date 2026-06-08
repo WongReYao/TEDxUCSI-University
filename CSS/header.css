@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header.pc_header{
+    background-color: black;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+}
+
+img.logo-img{
+    max-width:300px;
+    max-height:100px;
+}
+
+nav.pc-nav{
+    color:white;
+    margin-left: auto;
+    padding-right: 2rem;
+}
+
+.pc-nav ul{
+    display:flex;
+    list-style: none;
+    gap: 7.5rem;
+}
+
+.pc-nav a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: 0.3s;
+    color:white;
+    font-weight: bold;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    text-transform: uppercase;
+}
+
+.pc-nav a:hover{
+    text-decoration: underline;
+}

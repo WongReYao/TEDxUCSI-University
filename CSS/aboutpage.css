@@ -1,0 +1,140 @@
+body{
+    background-image: url(../resources/Background.png);
+    overflow-y: auto;
+}
+
+.slideshow-section {
+    background-color: #000;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 95%;
+    max-width: 1200px;
+    border-radius: 10px;
+    overflow: hidden; /* This keeps the images outside the box hidden */
+}
+
+.slideshow-container:hover {
+    cursor: pointer;
+}
+
+.slideshow-container:hover .mySlide img {
+    transform: scale(1.02); /* Very subtle zoom when hovering */
+}
+
+/* THE SLIDER TRACK */
+.slideshow-wrapper {
+    display: flex; /* Lines images up horizontally */
+    width: 100%;
+    /* This handles the 'Swipe' animation */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+.mySlide {
+    /* REMOVED: display: none (Images must exist side-by-side to swipe) */
+    min-width: 100%; 
+    box-sizing: border-box;
+}
+
+.mySlide img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease; /* Smooth transition for the zoom */
+}
+
+.slideshow-control {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex;
+    gap: 15px; 
+    z-index: 10;
+}
+
+.prev, .next {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.prev:hover, .next:hover {
+    background-color: #e62b1e;
+    color: white;
+}
+
+/* Container section context */
+.about-info-section {
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Flex wrapper aligning columns side-by-side */
+.about-info-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center; /* Vertically centers the text alongside the picture */
+    gap: 50px; /* Space separating the text section from the picture box */
+}
+
+/* Left Column Sizing */
+.about-text-column {
+    flex: 1; /* Automatically shares space equally */
+}
+
+.about-title {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.about-title .ted-red {
+    color: #e62b1e; /* Distinctive bold official brand red */
+}
+
+.about-description {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 1.15rem;
+    color: #fff;
+    line-height: 1.6; /* Adds breathing room between individual sentences */
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* Right Column Image Box Formatting */
+.about-image-column {
+    flex: 1; /* Automatically shares space equally */
+    display: flex;
+    justify-content: center;
+}
+
+.campus-img {
+    width: 100%;
+    max-width: 500px; /* Restricts excessive size on giant desktop screens */
+    height: auto;
+    border-radius: 4px; /* Matches the clean crisp edging from your mockup snippet */
+    object-fit: cover;
+}
+

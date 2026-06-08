@@ -1,0 +1,65 @@
+section.home-banner{
+    height:85vh;
+    width: 100%;
+    background-image: url(../resources/home_banner.webp);
+    background-size: cover;
+    background-position: content;
+    background-repeat: no-repeat;
+}
+
+body{
+    background-image: url(../resources/Background.png);
+    overflow-y: auto;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+section.Countdown-section{
+    padding: 80px 40px;
+    text-align: center;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+p.label{
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.display-timer{
+    font-size: 5rem;
+    word-spacing: 15px;
+    margin-bottom: 30px;
+}
+
+.register-btn {
+    display: inline-block;
+    background-color: #e62b1e; /* That vibrant TED Red */
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 15px 100px; /* Wide button like in your image */
+    border-radius: 12px; /* Rounded corners */
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #ff2b1e;
+    transform: scale(1.02);
+}
+
+section.home-banner-2{
+    width: 80%;
+    height:50vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+    padding-bottom: 25%;
+    background-image: url(../resources/home_banner_2.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+

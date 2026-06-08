@@ -1,0 +1,60 @@
+.footer-tedx-logo {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto 5px auto; 
+}
+
+.footer{
+    background-color: black;
+    color:white;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+}
+
+.contact-section h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 5px;
+}
+
+.social-media-icons a {
+    text-decoration: none;
+}
+
+.social-media-icons a i {
+    color: #888888; /* The Grey you wanted */
+    font-size: 2.5rem; /* Larger size */
+    transition: 0.3s;
+}
+
+.social-media-icons a i:hover {
+    color: #ffffff; /* Turns white on hover */
+    transform: scale(1.1); /* Subtle grow effect */
+}
+
+.license-text {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid #333; /* The horizontal line */
+    padding-top: 10px;
+    margin-top: 10px;
+    width: 70%; /* Narrower line to look more centralized */
+    text-align: center;
+}
