@@ -18,7 +18,8 @@ section.Countdown-section{
     padding: 80px 40px;
     text-align: center;
     color: white;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
 }
 
 p.label{
