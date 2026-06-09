@@ -66,18 +66,20 @@ nav.pc-nav{
         box-sizing: border-box !important;
     }
 
-    /* 2. Scale down the giant desktop logo layout box on phone viewports */
+    /* 2. CRITICAL FIX: Scale down the giant desktop logo box on phone viewports */
     img.logo-img {
-        max-width: 160px !important; /* Constrains the logo width to prevent frame clipping */
-        height: auto !important;
+        width: 150px !important; /* Decreased from 300px so it fits smaller screens easily */
+        max-width: 150px !important; 
+        height: auto !important; /* Automatically preserves correct logo height proportions */
+        display: block !important;
     }
 
-    /* 3. Hide the desktop horizontal navigation links completely on mobile */
+    /* 3. Hide the desktop horizontal checkbox hook */
     .menu-checkbox {
         display: none !important;
     }
 
-    /* Force the hamburger button to be visible and stay inside the screen */
+    /* Force the hamburger button to show up cleanly next to the logo */
     .hamburger-btn {
         display: flex !important;
         flex-direction: column !important;
@@ -88,15 +90,15 @@ nav.pc-nav{
 
     .hamburger-btn span {
         display: block !important;
-        width: 24px !important; /* Slightly smaller lines for better mobile scaling */
+        width: 24px !important; /* Sleek, neat menu bars */
         height: 3px !important;
         background-color: white !important;
         transition: 0.3s ease !important;
     }
 
-    /* 4. CONVERT THE MENUS INTO A HIDDEN VERTICAL DROPDOWN BOX */
+    /* 4. CONVERT THE NAV INTO A HIDDEN VERTICAL DROPDOWN BOX */
     nav.pc-nav {
-        display: none !important; /* Hidden by default */
+        display: none !important; /* Hidden by default until clicked */
         position: absolute !important;
         top: 100% !important; /* Drops down flush beneath header bar */
         left: 0 !important;
