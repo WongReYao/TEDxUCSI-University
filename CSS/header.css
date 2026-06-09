@@ -76,7 +76,7 @@ nav.pc-nav{
 
     /* 3. Hide the desktop horizontal checkbox hook */
     .menu-checkbox {
-        display: none !important;
+        display: none ;
     }
 
     /* Force the hamburger button to show up cleanly next to the logo */
