@@ -58,3 +58,34 @@
     width: 70%; /* Narrower line to look more centralized */
     text-align: center;
 }
+
+/* ===================================================
+   GLOBAL FOOTER MOBILE SCALING
+   =================================================== */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px; /* Shrinks container box height room */
+    }
+
+    .footer-tedx-logo {
+        max-width: 240px; /* Scales down official logo image presentation slightly */
+    }
+
+    .contact-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        gap: 30px; /* Widens clickable thumb layout targets for mobile fingers */
+    }
+
+    .social-icons a i {
+        font-size: 1.8rem; /* Scales icon glyphs gracefully */
+    }
+
+    .license-text {
+        width: 90%; /* Expands separator border line to frame mobile screen edges beautifully */
+        font-size: 0.6rem;
+        line-height: 1.5;
+    }
+}

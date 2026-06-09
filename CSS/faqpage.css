@@ -138,3 +138,46 @@
 .faq-item.active-item .accordion-arrow {
     transform: rotate(180deg); /* Flips the chevron arrow right side up */
 }
+
+/* ===================================================
+   FAQ PAGE MOBILE REALIGNMENTS
+   =================================================== */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 40px 15px; /* Strips padding width so text spans edge-to-edge */
+    }
+
+    /* Snaps Title and Search container into a centered stack */
+    .faq-top-bar {
+        flex-direction: column;
+        align-items: stretch; /* Stretches elements full width */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .faq-page-title {
+        font-size: 1.6rem; /* Keeps long FAQ heading title from clipping */
+    }
+
+    .faq-search-container {
+        width: 100%; /* Spans search bar full width for thumb targeting */
+    }
+
+    #faqSearchInput {
+        width: 100%;
+    }
+
+    /* Tightens individual accordion box headers padding rules */
+    .faq-question-row {
+        padding: 18px 20px;
+    }
+
+    .faq-question-row h2 {
+        font-size: 0.95rem; /* Shrinks question titles to prevent text clipping lines */
+        line-height: 1.4;
+    }
+
+    .panel-content {
+        padding: 0 20px 20px 20px;
+    }
+}

@@ -10,8 +10,11 @@ header.pc_header{
     justify-content: space-between;
     align-items: center;
     padding:10px 20px;
-    width:100%;
-    
+}
+
+/* Hide the mobile elements completely on Desktop PC view */
+.menu-checkbox, .hamburger-btn {
+    display: none;
 }
 
 img.logo-img{
@@ -44,4 +47,73 @@ nav.pc-nav{
 
 .pc-nav a:hover{
     text-decoration: underline;
+}
+
+/* ===================================================
+   MOBILE-ONLY RESPONSIVE BREAKPOINT (768px and below)
+   =================================================== */
+@media (max-width: 768px) {
+    header.pc_header {
+        position: relative; /* Anchor for absolute positioning */
+        padding: 15px 20px;
+    }
+
+    /* 1. Make the Hamburger lines visible on phones */
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s ease;
+    }
+
+    /* 2. Convert Nav into a vertical full-width dropdown box */
+    nav.pc-nav {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%; /* Drops down flush beneath header bar */
+        left: 0;
+        width: 100%;
+        background-color: #0c0c0c; /* Dark premium backdrop */
+        padding: 25px 0;
+        margin-left: 0;
+        z-index: 999;
+    }
+    .pc-nav ul {
+        flex-direction: column; /* Flips horizontally into a neat column list */
+        align-items: center;
+        gap: 2rem; /* Comfortable touch target sizing for fingers */
+    }
+    .pc-nav a {
+        font-size: 1.2rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 4. Trigger state to open menu when checkbox is activated */
+    .menu-checkbox:checked ~ nav.pc-nav {
+        display: block;
+    }
+
+    /* 5. Animation logic to turn the hamburger into a red 'X' when open */
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #e62b1e; /* Iconic TED Red */
+    }
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #e62b1e;
+    }
 }

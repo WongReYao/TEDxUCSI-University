@@ -138,3 +138,25 @@ body{
     object-fit: cover;
 }
 
+/* ===================================================
+   ABOUT PAGE MOBILE REALIGNMENTS
+   =================================================== */
+@media (max-width: 768px) {
+    /* Snap horizontal sections into column boxes */
+    .about-info-container {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    /* Flips row-reverse items so text is stacked nicely on top of images on mobile */
+    .alt-layout .about-info-container {
+        flex-direction: column-reverse !important;
+    }
+
+    /* Turn justified text to left-aligned to prevent ugly spacing gaps on phones */
+    .about-description {
+        text-align: left;
+    }
+}
