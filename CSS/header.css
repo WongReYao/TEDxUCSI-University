@@ -1,133 +1,151 @@
+/* ===================================================
+   1. GLOBAL RESET AND BASE UTILITIES
+   =================================================== */
 *{
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-header.pc_header{
+/* ===================================================
+   2. DESKTOP VIEW STYLES (Screen size above 768px)
+   =================================================== */
+header.pc_header {
     background-color: black;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:10px 20px;
+    padding: 10px 20px;
+    width: 100%;
 }
 
-/* Hide the mobile elements completely on Desktop PC view */
-.menu-checkbox, .hamburger-btn {
-    display: none;
+img.logo-img {
+    max-width: 300px;
+    max-height: 100px;
 }
 
-img.logo-img{
-    max-width:300px;
-    max-height:100px;
-}
-
-nav.pc-nav{
-    color:white;
+nav.pc-nav {
+    color: white;
     margin-left: auto;
     padding-right: 2rem;
 }
 
-.pc-nav ul{
-    display:flex;
+.pc-nav ul {
+    display: flex;
     list-style: none;
     gap: 7.5rem;
 }
 
-.pc-nav a{
+.pc-nav a {
     text-decoration: none;
     font-weight: 600;
     font-size: 1.3rem;
     transition: 0.3s;
-    color:white;
+    color: white;
     font-weight: bold;
     font-family: 'Helvetica', 'Arial', sans-serif;
     text-transform: uppercase;
 }
 
-.pc-nav a:hover{
+.pc-nav a:hover {
     text-decoration: underline;
 }
 
+/* PERMANENTLY HIDE MOBILE HOOKS ON MONITORS */
+.menu-checkbox, 
+.hamburger-btn {
+    display: none;
+}
+
 /* ===================================================
-   HEADER MOBILE BREAKPOINT RE-CENTERING (768px and below)
+   3. MOBILE RESPONSIVE MEDIA BREAKPOINT (768px and below)
    =================================================== */
 @media (max-width: 768px) {
-    /* 1. Prevent the header bar from overflowing horizontally */
     header.pc_header {
-        position: relative !important;
-        display: flex !important;
-        flex-direction: row !important; 
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 10px 15px !important; 
-        width: 100% !important;
-        overflow: hidden !important; 
-        box-sizing: border-box !important;
+        position: relative;
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px; 
+        width: 100%;
+        overflow: visible; /* Allows the absolute menu tray to drop out downwards */
     }
 
-    /* 2. Scale down the desktop logo box on phone viewports */
     img.logo-img {
-        width: 150px !important; 
-        max-width: 150px !important; 
-        height: auto !important; 
-        display: block !important;
+        width: 150px; 
+        max-width: 150px; 
+        height: auto; 
+        display: block;
     }
 
-    /* 3. Hide the desktop horizontal checkbox hook */
+    /* Force the interactive checkbox tracker out of layout space */
     .menu-checkbox {
-        display: none ;
+        display: none !important;
     }
 
-    /* Force the hamburger button to show up cleanly next to the logo */
+    /* Make Hamburger Button visible on mobile screens */
     .hamburger-btn {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 5px !important;
-        cursor: pointer !important;
-        z-index: 1000 !important;
+        display: flex !important; /* Explicitly forces visibility over page overrides */
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1000;
     }
 
     .hamburger-btn span {
-        display: block !important;
-        width: 24px !important; 
-        height: 3px !important;
-        background-color: white !important;
-        transition: 0.3s ease !important;
+        display: block;
+        width: 24px; 
+        height: 3px;
+        background-color: white;
+        transition: 0.3s ease;
     }
 
-    /* 4. CONVERT THE NAV INTO A HIDDEN VERTICAL DROPDOWN BOX */
+    /* CONVERT NAV BAR INTO AN ABSOLUTE DROPDOWN PANELS BOX */
     nav.pc-nav {
-        display: none; /* FIXED: Removed !important so the checked rule can open it */
-        position: absolute !important;
-        top: 100% !important; 
-        left: 0 !important;
-        width: 100% !important;
-        background-color: #0c0c0c !important; 
-        padding: 25px 0 !important;
-        margin-left: 0 !important;
-        z-index: 999 !important;
-        box-sizing: border-box !important;
+        display: none !important; /* Forces the box to hide completely until targeted */
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #0c0c0c; 
+        padding: 25px 0;
+        margin-left: 0;
+        z-index: 999;
     }
 
-    /* 5. OVERRIDE THE DESKTOP GAP: Force links into a vertical stack */
+    /* Re-orient wide horizontal links into vertical column item tracks */
     .pc-nav ul {
-        flex-direction: column !important; 
-        align-items: center !important;
-        gap: 1.8rem !important; 
-        padding-right: 0 !important; 
-        padding-left: 0 !important;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 1.8rem; 
+        padding-right: 0; 
+        padding-left: 0;
     }
 
     .pc-nav a {
-        font-size: 1.2rem !important;
-        display: block !important;
-        width: 100% !important;
-        text-align: center !important;
+        font-size: 1.2rem;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
-    /* 6. Display the dropdown box vertically when the hamburger toggle is active */
+    /* THE CSS DROPDOWN HOOK: Shows the menu tray layout instantly when clicked */
     .menu-checkbox:checked ~ nav.pc-nav {
-        display: block !important; /* Overrides the default display: none state instantly */
+        display: block !important; /* Overrides the initial hidden block layout constraint */
+    }
+    
+    /* Micro-animation: Morphs hamburger bars into a clean Red 'X' when menu tray is open */
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #e62b1e;
+    }
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #e62b1e;
     }
 }
