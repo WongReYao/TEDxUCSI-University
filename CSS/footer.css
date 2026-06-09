@@ -1,3 +1,6 @@
+/* ===================================================
+   DESKTOP STYLES (Screen size above 768px)
+   =================================================== */
 .footer-tedx-logo {
     width: 100%;
     max-width: 350px;
@@ -6,9 +9,9 @@
     margin: 0 auto 5px auto; 
 }
 
-.footer{
+.footer {
     background-color: black;
-    color:white;
+    color: white;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
@@ -37,14 +40,14 @@
 }
 
 .social-media-icons a i {
-    color: #888888; /* The Grey you wanted */
-    font-size: 2.5rem; /* Larger size */
+    color: #888888;
+    font-size: 2.5rem;
     transition: 0.3s;
 }
 
 .social-media-icons a i:hover {
-    color: #ffffff; /* Turns white on hover */
-    transform: scale(1.1); /* Subtle grow effect */
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .license-text {
@@ -52,40 +55,40 @@
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border-top: 1px solid #333; /* The horizontal line */
+    border-top: 1px solid #333;
     padding-top: 10px;
     margin-top: 10px;
-    width: 70%; /* Narrower line to look more centralized */
+    width: 70%;
     text-align: center;
 }
 
 /* ===================================================
-   GLOBAL FOOTER MOBILE SCALING
+   GLOBAL FOOTER MOBILE SCALING (768px and below)
    =================================================== */
 @media (max-width: 768px) {
     .footer {
-        padding: 40px 15px; /* Shrinks container box height room */
+        padding: 20px 15px; /* FIXED: Shaved down so it stays snug and compact on mobile */
     }
 
     .footer-tedx-logo {
-        max-width: 240px; /* Scales down official logo image presentation slightly */
+        max-width: 180px; /* FIXED: Visually downscaled the massive logo box to sit nicely */
     }
 
     .contact-section h3 {
-        font-size: 1.5rem;
+        font-size: 1.2rem; /* FIXED: Balanced heading size for mobile viewports */
     }
 
-    .social-icons {
-        gap: 30px; /* Widens clickable thumb layout targets for mobile fingers */
+    .social-media-icons {
+        gap: 20px; /* FIXED: Adjusted class name match and spacing for finger targets */
     }
 
-    .social-icons a i {
-        font-size: 1.8rem; /* Scales icon glyphs gracefully */
+    .social-media-icons a i {
+        font-size: 1.6rem; /* FIXED: Adjusted class name match to scale icons down elegantly */
     }
 
     .license-text {
-        width: 90%; /* Expands separator border line to frame mobile screen edges beautifully */
-        font-size: 0.6rem;
+        width: 90%;
+        font-size: 0.55rem; /* FIXED: Made copyright information more subtle */
         line-height: 1.5;
     }
 }
