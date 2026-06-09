@@ -75,7 +75,7 @@
     }
 
     .contact-section h3 {
-        font-size: 1.2rem; /* FIXED: Balanced heading size for mobile viewports */
+        font-size: 0.95rem; /* FIXED: Balanced heading size for mobile viewports */
     }
 
     .social-media-icons {
@@ -83,7 +83,7 @@
     }
 
     .social-media-icons a i {
-        font-size: 1.6rem; /* FIXED: Adjusted class name match to scale icons down elegantly */
+        font-size: 1.2rem; /* FIXED: Adjusted class name match to scale icons down elegantly */
     }
 
     .license-text {
