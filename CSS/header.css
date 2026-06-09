@@ -57,20 +57,20 @@ nav.pc-nav{
     header.pc_header {
         position: relative !important;
         display: flex !important;
-        flex-direction: row !important; /* Keeps logo and hamburger on the same horizontal line */
+        flex-direction: row !important; 
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 10px 15px !important; /* Snugger side limits for mobile viewports */
+        padding: 10px 15px !important; 
         width: 100% !important;
-        overflow: hidden !important; /* Clips rogue elements from causing left/right swiping */
+        overflow: hidden !important; 
         box-sizing: border-box !important;
     }
 
-    /* 2. CRITICAL FIX: Scale down the giant desktop logo box on phone viewports */
+    /* 2. Scale down the desktop logo box on phone viewports */
     img.logo-img {
-        width: 150px !important; /* Decreased from 300px so it fits smaller screens easily */
+        width: 150px !important; 
         max-width: 150px !important; 
-        height: auto !important; /* Automatically preserves correct logo height proportions */
+        height: auto !important; 
         display: block !important;
     }
 
@@ -90,7 +90,7 @@ nav.pc-nav{
 
     .hamburger-btn span {
         display: block !important;
-        width: 24px !important; /* Sleek, neat menu bars */
+        width: 24px !important; 
         height: 3px !important;
         background-color: white !important;
         transition: 0.3s ease !important;
@@ -98,12 +98,12 @@ nav.pc-nav{
 
     /* 4. CONVERT THE NAV INTO A HIDDEN VERTICAL DROPDOWN BOX */
     nav.pc-nav {
-        display: none !important; /* Hidden by default until clicked */
+        display: none; /* FIXED: Removed !important so the checked rule can open it */
         position: absolute !important;
-        top: 100% !important; /* Drops down flush beneath header bar */
+        top: 100% !important; 
         left: 0 !important;
         width: 100% !important;
-        background-color: #0c0c0c !important; /* Dark premium backdrop */
+        background-color: #0c0c0c !important; 
         padding: 25px 0 !important;
         margin-left: 0 !important;
         z-index: 999 !important;
@@ -112,10 +112,11 @@ nav.pc-nav{
 
     /* 5. OVERRIDE THE DESKTOP GAP: Force links into a vertical stack */
     .pc-nav ul {
-        flex-direction: column !important; /* Flips horizontally into a neat column list */
+        flex-direction: column !important; 
         align-items: center !important;
-        gap: 1.8rem !important; /* OVERRIDES THE 7.5rem COMFORTABLE TOUCH TARGET SIZING */
-        padding-right: 0 !important; /* Clears desktop padding tracking values */
+        gap: 1.8rem !important; 
+        padding-right: 0 !important; 
+        padding-left: 0 !important;
     }
 
     .pc-nav a {
@@ -127,6 +128,6 @@ nav.pc-nav{
 
     /* 6. Display the dropdown box vertically when the hamburger toggle is active */
     .menu-checkbox:checked ~ nav.pc-nav {
-        display: block !important;
+        display: block !important; /* Overrides the default display: none state instantly */
     }
 }
