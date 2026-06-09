@@ -3,7 +3,7 @@
 // ==========================================
 
 // 1. SET YOUR TARGET EVENT DATE HERE (Format: "Month Day, Year HH:MM:SS")
-const targetDate = new Date("November 6, 2026 09:00:00").getTime();
+const targetDate = new Date("November 14, 2026 09:00:00").getTime();
 
 function updateCountdown() {
     // 2. Get the exact timestamp of the current moment
