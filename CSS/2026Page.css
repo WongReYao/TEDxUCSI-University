@@ -1,0 +1,384 @@
+body {
+    background-image: url(../resources/Background.png);
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    color: #ffffff;
+}
+
+/* Added responsive container handling for header spacing alignment */
+main {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Hero Section Container */
+.hero-section {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* Flex Layout for Content */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Left Column Styling */
+.left-col {
+    flex: 1;
+    max-width: 400px;
+}
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.location-info {
+    margin-top: 15px;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+}
+
+.date-text {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.venue-text {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+/* Right Column Styling */
+.right-col {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.event-highlights {
+    font-size: 2.5rem;
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.event-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: #e0e0e0;
+    font-weight: normal;
+}
+
+/* Button Styling */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.register-btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    background-color: #801818;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.register-btn:hover {
+    background-color: #991f1f;
+}
+
+/* Schedule Section Styles */
+.schedule-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px 60px 40px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Base Card Styling */
+.schedule-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 25px;
+    border-radius: 16px;
+    width: 100%;
+}
+
+/* Color Varieties */
+.variant-light {
+    background-color: #8c5858;
+}
+
+.variant-dark {
+    background-color: #801818;
+}
+
+/* Left Content Area */
+.card-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-extra-info {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 4px;
+    color: #e0e0e0;
+}
+
+.card-subtitle {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    margin-top: 6px;
+}
+
+.highlight-time {
+    color: #ffb3b3; 
+}
+
+/* Right Content Area (Labels) */
+.card-right {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+}
+
+.category-tag {
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* Clickable states for schedule cards */
+.clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.clickable-card:hover {
+    filter: brightness(1.1);
+    transform: translateX(4px);
+}
+
+/* Popup Overlay Background */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2000; /* Raised layer value to stay on top of fixed header configs */
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Active State for Overlay */
+.popup-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Right Slide-out Panel Content */
+.popup-content {
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+/* Active State for Slide Panel */
+.popup-overlay.active .popup-content {
+    transform: translateX(0);
+}
+
+/* Header Area */
+.popup-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: capitalize;
+    opacity: 0.9;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+/* Body Content Area */
+.popup-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.popup-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-speaker-name {
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.popup-speaker-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 35px;
+}
+
+/* Details Section */
+.popup-details h3 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.popup-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+    word-break: break-all;
+}
+
+/* Responsive Configurations */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-col, .right-col {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .event-highlights {
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .schedule-card {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
+    }
+    
+    .card-right {
+        align-self: flex-start;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
