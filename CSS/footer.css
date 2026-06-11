@@ -45,7 +45,7 @@
     transition: 0.3s;
 }
 
-.social-media-icons a i:hover {
+.social-media-icons a i:hover .rednote-inner-character .fa-square{
     color: #ffffff;
     transform: scale(1.1);
 }
@@ -60,6 +60,39 @@
     margin-top: 10px;
     width: 70%;
     text-align: center;
+}
+
+.rednote-icon-btn {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.rednote-fa-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;  /* Matches your desktop 2.5rem font-size precisely */
+    height: 2.5rem;
+}
+
+/* Forces the solid square background base layer to align with Font Awesome colors */
+.rednote-fa-wrapper .fa-square {
+    font-size: 2.5rem;
+    color: #888888; /* Matches your exact standard icon grey */
+    transition: 0.3s ease;
+}
+
+/* Centers the modern geometric R cleanly inside the frame */
+.rednote-inner-character {
+    position: absolute;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.25rem; /* Balanced proportional layout constraint */
+    font-weight: 900;
+    color: black; /* Cuts out of the grey background container shape beautifully */
+    line-height: 1;
+    user-select: none;
 }
 
 /* ===================================================
@@ -90,5 +123,10 @@
         width: 90%;
         font-size: 0.55rem; /* FIXED: Made copyright information more subtle */
         line-height: 1.5;
+    }
+
+    .rednote-svg-link svg {
+        width: 1.2rem; /* Automatically downscales to match your mobile icon rules */
+        height: 1.2rem;
     }
 }
