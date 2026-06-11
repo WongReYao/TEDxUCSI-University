@@ -37,17 +37,17 @@ p.label{
 
 .register-btn {
     display: inline-block;
-    background-color: #e62b1e; /* That vibrant TED Red */
+    background-color: #eb0028; /*updated the color*/
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-    padding: 15px 100px; /* Wide button like in your image */
-    border-radius: 12px; /* Rounded corners */
+    padding: 15px 100px; 
+    border-radius: 12px; 
     transition: 0.3s;
 }
 
 .register-btn:hover {
-    background-color: #ff2b1e;
+    background-color: #eb0028; /*updated the color*/
     transform: scale(1.02);
 }
 
