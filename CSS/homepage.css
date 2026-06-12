@@ -15,7 +15,10 @@ body{
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 section.Countdown-section{
-    padding:50px 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 10px;
     text-align: center;
     color: white;
     font-family: 'Helvetica', sans-serif;
@@ -119,7 +122,7 @@ a{
 
     /* 2. THE GAP FIX: Tighten up the Countdown Section Container */
     section.Countdown-section {
-        padding: 15px 20px 5px 20px !important; /* Heavily cuts down top and bottom empty spaces */
+        padding: 30px 20px 5px 20px !important; /* Heavily cuts down top and bottom empty spaces */
     }
 
     p.label {
