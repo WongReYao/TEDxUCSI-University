@@ -138,7 +138,10 @@ body{
     font-weight: 300;
     text-align: justify;
 }
-
+a{
+    color:#e62b1e;
+    text-decoration: underline;
+}
 /* Right Column Image Box Formatting */
 .about-image-column {
     flex: 1; 

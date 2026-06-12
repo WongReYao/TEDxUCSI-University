@@ -15,7 +15,7 @@ body{
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 section.Countdown-section{
-    padding: 80px 40px;
+    padding:50px 40px;
     text-align: center;
     color: white;
     font-family: 'Helvetica', sans-serif;
@@ -56,12 +56,56 @@ section.home-banner-2{
     height:50vh;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 10%;
+    padding-top: 5%;
     padding-bottom: 25%;
     background-image: url(../resources/home_banner_2.webp);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.home-info-section {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-info-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center; /* Vertically centers the text alongside the picture */
+    gap: 50px; /* Space separating the text section from the picture box */
+}
+
+.home-text-column {
+    flex: 1; /* Automatically shares space equally */
+}
+
+.home-title {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.home-title .ted-red {
+    color: #e62b1e; /* Distinctive bold official brand red */
+}
+
+.home-description {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 1.15rem;
+    color: #fff;
+    line-height: 1.6;
+    font-weight: 300;
+    text-align: justify;
+}
+a{
+    color:#e62b1e;
+    text-decoration: underline;
 }
 
 /* ===================================================
@@ -120,5 +164,22 @@ section.home-banner-2{
         background-repeat: no-repeat !important;
     }
 
+    /* Snap horizontal sections into column boxes */
+    .home-info-container {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 10px 10px;
+        gap: 10px;
+    }
+
+    /* Flips row-reverse items so text is stacked nicely on top of images on mobile */
+    .alt-layout .home-info-container {
+        flex-direction: column-reverse !important;
+    }
+
+    /* Turn justified text to left-aligned to prevent ugly spacing gaps on phones */
+    .home-description {
+        text-align: left;
+    }
     
 }

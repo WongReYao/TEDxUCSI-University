@@ -119,14 +119,25 @@
         font-size: 1.2rem; /* FIXED: Adjusted class name match to scale icons down elegantly */
     }
 
+    /* 1. Scales down the Rednote flex wrapper box layout */
+    .rednote-fa-wrapper {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    /* 2. Scales down the background solid square element */
+    .rednote-fa-wrapper .fa-square {
+        font-size: 1.2rem !important;
+    }
+
+    /* 3. Scales down the inner text character so it stays centered inside the scaled box */
+    .rednote-inner-character {
+        font-size: 0.65rem !important;
+    }
+
     .license-text {
         width: 90%;
         font-size: 0.55rem; /* FIXED: Made copyright information more subtle */
         line-height: 1.5;
-    }
-
-    .rednote-svg-link svg {
-        width: 1.2rem; /* Automatically downscales to match your mobile icon rules */
-        height: 1.2rem;
     }
 }
