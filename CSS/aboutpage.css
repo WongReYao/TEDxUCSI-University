@@ -151,24 +151,30 @@ body{
 }
 
 /* ===================================================
-   ABOUT PAGE MOBILE REALIGNMENTS
+   ABOUT PAGE MOBILE REALIGNMENTS (768px and below)
    =================================================== */
 @media (max-width: 768px) {
-    /* Snap horizontal sections into column boxes */
-    .about-info-container {
-        flex-direction: column !important;
+    
+    /* Target the container class universally across ALL sections to force the drop */
+    [class*="about-info-section"] .about-info-container {
+        flex-direction: column !important; /* Safely forces all parts to drop into a vertical stack */
         text-align: center;
-        padding: 10px 10px;
-        gap: 10px;
+        padding: 20px 20px; /* Restores identical, clean padding borders on the left and right */
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    /* Flips row-reverse items so text is stacked nicely on top of images on mobile */
-    .alt-layout .about-info-container {
+    /* Standardizes reverse-stacking behaviors for all active alt layouts */
+    [class*="about-info-section"].alt-layout .about-info-container {
         flex-direction: column-reverse !important;
     }
 
-    /* Turn justified text to left-aligned to prevent ugly spacing gaps on phones */
+    /* Ensures the description text aligns beautifully on mobile */
     .about-description {
         text-align: left;
+        width: 100%;
+        padding: 0 10px; /* Locks matching margins on both sides of the paragraph text */
+        box-sizing: border-box;
     }
 }
