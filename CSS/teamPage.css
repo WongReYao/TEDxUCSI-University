@@ -86,14 +86,14 @@ body{
    =================================================== */
 @media (max-width: 768px) {
     .team-page-title {
-        font-size: 2.2rem; /* Scales heading size down for small mobile titles */
+        font-size: 2.2rem; 
         margin-bottom: 30px;
     }
 
     .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Pulls minimum boundary width down */
-        gap: 25px; /* Tightens padding gaps between profile cards */
-        padding: 0 10px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+        gap: 25px; 
+        padding: 10px 10px;
     }
 
     .team-img-container {
