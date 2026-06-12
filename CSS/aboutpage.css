@@ -82,7 +82,7 @@ body{
 
 /* Container section context */
 .about-info-section {
-    padding: 60px 40px;
+    padding: 20px 30px;
     display: flex;
     justify-content: center;
 }
