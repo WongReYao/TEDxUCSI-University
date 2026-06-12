@@ -101,7 +101,6 @@ body{
     justify-content: center;
 }
 
-/* Flex wrapper aligning columns side-by-side */
 .about-info-container {
     display: flex;
     max-width: 1200px;
@@ -110,7 +109,6 @@ body{
     gap: 50px; /* Space separating the text section from the picture box */
 }
 
-/* Left Column Sizing */
 .about-text-column {
     flex: 1; /* Automatically shares space equally */
 }
@@ -160,8 +158,8 @@ body{
     .about-info-container {
         flex-direction: column !important;
         text-align: center;
-        padding: 30px 20px;
-        gap: 20px;
+        padding: 10px 10px;
+        gap: 10px;
     }
 
     /* Flips row-reverse items so text is stacked nicely on top of images on mobile */
