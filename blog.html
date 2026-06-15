@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Css for header and footer-->
+            <link rel="stylesheet" href="./CSS/header.css">
+            <link rel="stylesheet" href="./CSS/footer.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!--End of commend-->
+        <!--CSS for Blog page-->
+            <link rel="stylesheet" href="./CSS/blogpage.css">
+        <!--end of comment-->
+        <!--Js for Blog Page Data-->
+        <script src="./blogData.js"></script>
+    </head>
+
+    <body>
+        <header class="pc_header">
+            <div class="logo_container">
+                <a href="./index.html">
+                    <img src="./resources/TEDxUCSI Logo (White).webp" alt="TEDxUCSI University Logo" class="logo-img">
+                </a>
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="pc-nav">
+                <ul>
+                    <li> <a href="./index.html">Home</a> </li>
+                    <li> <a href="./about.html">About</a> </li>
+                    <li> <a href="./2026.html">2026</a> </li>
+                    <li> <a href="#">Team</a> </li>
+                    <li> <a href="">Blog</a> </li>
+                    <li> <a href="./FAQ.html">FAQ</a> </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="latest-section">
+            <div class="section-header">
+                <h2 class="main-title" id="page-main-heading">WATCH OUR STORY UNFOLD</h2>
+                <div class="lang-toggle" id="language-switcher" onclick="toggleLanguage()">English/Chinese</div>
+            </div>
+            
+            <div id="latest-post-container">
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <section class="older-section">
+            <div class="blog-grid" id="older-posts-container"> </div>
+        </section>
+
+        <script>
+       // Centralized Data Object
+        const comprehensiveArticles = {
+            "Blog_Post_1": {
+                id: "Blog_Post_1",
+                isLatest: true,
+                image: "./resources/Blog Post Pic/Post_1.jpg",
+                author: "JAVI",
+                datetime: "12/6/2026 10PM",
+                EN: {
+                    title: "What is TEDx and a look into TEDxUCSI past",
+                    summary: "TEDx is an independently organized program inspired by TED’s mission of sharing ideas worth spreading through local events and community discussions. TEDxUCSIUniversity has hosted a series of events that showcase diverse perspectives, innovation, and inspiring stories from students, academics, and industry leaders. The chapter will return on November 14, 2026, with its new theme, “Reading Beyond the Line.”"
+                },
+                ZH: {
+                    title: "TEDx 是什么？回顾 TEDxUCSI 的历届活动",
+                    summary: "TEDx 是一项受 TED「值得传播的理念」使命启发的独立举办活动，通过本地活动与社区交流分享具有影响力的想法。TEDxUCSIUniversity 过去举办了一系列活动，汇聚学生、学者及业界领袖，展示多元观点、创新思维与启发人心的故事。TEDxUCSIUniversity 将于 2026 年 11 月 14 日回归，并以全新主题「Reading Beyond the Line」开启新篇章。"
+                }
+            }
+        };
+
+        let currentLanguage = "EN";
+
+        // Translation dictionary for labels that shift with language state changes
+        const UI_LABELS = {
+            EN: {
+                heading: "WATCH OUR STORY UNFOLD",
+                summaryLabel: "BRIEF SUMMARY"
+            },
+            ZH: {
+                heading: "见证我们的故事展开",
+                summaryLabel: "内容摘要"
+            }
+        };
+
+        function renderBlogPage() {
+            const latestContainer = document.getElementById('latest-post-container');
+            const olderContainer = document.getElementById('older-posts-container');
+            
+            // Safety clear to reset content frames before updating strings
+            latestContainer.innerHTML = '';
+            olderContainer.innerHTML = '';
+
+            // Synchronize your section title with the active language tracker
+            document.getElementById('page-main-heading').innerText = UI_LABELS[currentLanguage].heading;
+
+            // Loop through your dataset object and output HTML elements using your external CSS classes
+            Object.values(comprehensiveArticles).forEach(post => {
+                const localizedContent = post[currentLanguage];
+
+                if (post.isLatest) {
+                    // Generates the top feature story using your exact '.latest-card' style classes
+                    latestContainer.innerHTML = `
+                    <div class="latest-card" onclick="navigateToPost('${post.id}')">
+                        <div class="latest-img-wrapper">
+                        <img src="${post.image}" alt="${localizedContent.title}">
+                        </div>
+                        <div class="latest-content">
+                        <h3>${localizedContent.title}</h3>
+                        <p class="summary-label">${UI_LABELS[currentLanguage].summaryLabel}</p>
+                        <p class="summary-text">${localizedContent.summary}</p>
+                        </div>
+                    </div>
+                    `;
+                } else {
+                    // Generates the bottom grid item frames using your '.blog-card' style classes
+                    olderContainer.innerHTML += `
+                    <div class="blog-card" onclick="navigateToPost('${post.id}')">
+                        <div class="card-img-wrapper">
+                        <img src="${post.image}" alt="${localizedContent.title}">
+                        </div>
+                        <div class="card-content">
+                        <h3>${localizedContent.title}</h3>
+                        <p class="summary-label">${UI_LABELS[currentLanguage].summaryLabel}</p>
+                        <p class="summary-text">${localizedContent.summary}</p>
+                        </div>
+                    </div>
+                    `;
+                }
+            });
+        }
+
+        // Language toggle trigger that flips values and tells the script to redraw the view strings
+        function toggleLanguage() {
+            currentLanguage = (currentLanguage === "EN") ? "ZH" : "EN";
+            renderBlogPage();
+        }
+
+        function navigateToPost(id) {
+            window.location.href = `blogpost.html?id=${id}&lang=${currentLanguage}`;
+        }
+
+        // Guard routine ensuring your layout objects exist before runtime injection drops text blocks
+        document.addEventListener("DOMContentLoaded", renderBlogPage);
+        </script>
+
+        <footer class="footer">            
+            <div class="footer-logo-container">
+                <img src="./resources/TEDxUCSI Logo (White).webp" alt="TEDxUCSI University Logo" class="footer-tedx-logo">
+            </div>
+
+            <div class="contact-section">
+                <h3>CONTACT US</h3>
+                <div class="social-media-icons">
+                    <a href="mailto:tedxucsi2026@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/tedxucsi2026?igsh=a2pyb3RjNTJsa2dx"  target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/tedxucsi-university-1381083b3"  target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@tedxucsi20264?_r=1&_t=ZS-96Vn5EjVBw5"  target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61590696416373" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://xhslink.com/m/6y8RYC0QHMX" target="_blank" class="rednote-icon-btn">
+                        <span class="rednote-fa-wrapper">
+                            <i class="fa-solid fa-square"></i>
+                            <span class="rednote-inner-character">R</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <p class="license-text"> THIS INDEPENDENT TEDx EVENT IS OPERATED UNDER LICENSE FROM TED.</p>
+        </footer>
+    </body>
+</html>

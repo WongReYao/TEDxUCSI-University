@@ -1,0 +1,162 @@
+/* Base Layout Theme Overrides matching image references */
+body {
+  background-color: #111111; /* Dark grunge backing layer background texture look */
+  font-family: 'Arial Black', Gadget, sans-serif; /* Mimics heavy block header style */
+  margin: 0;
+  padding: 0;
+}
+
+/* Sections Structure Layout wrappers */
+.latest-section, .older-section, .single-post-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+/* Language Switcher Pill Button Layout - Synchronized Design */
+.lang-toggle {
+  background: #FFFFFF;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;              /* FIX: Changes mouse cursor to clicking pointer hand instantly */
+  user-select: none;            /* Prevents accidental textbook highlighting when clicking fast */
+  transition: background-color 0.2s ease, opacity 0.2s ease; /* Smooth visual color shift duration */
+  display: inline-block;
+}
+
+/* Hover & Interactive effects to match your blog post page style */
+.lang-toggle:hover {
+  background-color: #E6E6E6;    /* Shakes down to a premium off-white shade on hover */
+  opacity: 0.9;                 /* Slight dimming to give responsive tactile click response feedback */
+}
+
+.section-divider {
+  border: 0;
+  height: 2px;
+  background: #333333;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+/* Flexbox Container Configuration for the Top Row Card */
+.latest-card {
+  display: flex;
+  background: #FFFFFF;
+  padding: 25px;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.latest-img-wrapper {
+  flex: 1.2;
+}
+.latest-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.latest-content {
+  flex: 1.8;
+  color: #000000;
+}
+
+/* 3-Column Core Grid Setup for Secondary Stories */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.blog-card {
+  background: #FFFFFF;
+  color: #000000;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography internal element standards */
+.latest-content h3, .card-content h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1.6rem;
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: #555555;
+  margin: 0 0 5px 0;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+.summary-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-all;
+  font-family: sans-serif;
+  color: #111111;
+  margin: 0;
+}
+
+/* Template Display Formatting styles */
+.single-post-section {
+  color: #FFFFFF;
+}
+.back-btn {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+.post-holder {
+  background: #FFFFFF;
+  color: #000000;
+  padding: 30px;
+  margin-top: 20px;
+}
+.post-hero-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layout Fallback responsiveness optimization */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .latest-card {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

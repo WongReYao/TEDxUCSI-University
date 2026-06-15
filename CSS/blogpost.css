@@ -1,0 +1,134 @@
+body{
+    background-color:black;
+}
+
+/* ==========================================
+   STORY DETAIL PAGE STYLING (DARK THEME)
+   ========================================== */
+
+/* Outer structure wrapper section block */
+.story-detail-section {
+  width: 100%;
+  max-width: 1200px; /* Aligns container edge profile directly with main list view */
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* Full banner styling block */
+.story-banner {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.story-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content block alignment bounds mapping */
+.story-content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+}
+
+/* Header structural flex layout configuration rules */
+.story-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.title-meta-block {
+  flex: 1;
+}
+
+/* Bold Display Type Headers styling rules */
+#render-title {
+  color: #FFFFFF;
+  font-family: 'Arial Black', Gadget, sans-serif;
+  font-size: 3rem;
+  margin: 0 0 15px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Metadata formatting text specs block */
+.story-metadata {
+  font-family: 'Arial Black', Gadget, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: #FFFFFF;
+}
+
+.story-metadata p {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Yellow brand accent text configuration mapping */
+.highlight-text {
+  color: #FFB800; /* Vibrant yellow text matching your reference screenshot text output color */
+}
+
+/* Clean body paragraph style settings */
+.story-body-copy {
+  color: #E0E0E0;
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.story-body-copy p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Language Switcher Pill Button Layout */
+.lang-toggle {
+  background-color: #FFFFFF;    /* Solid white background so it pops off the black */
+  color: #000000;               /* Solid black text inside the button */
+  padding: 8px 16px;            /* Internal spacing for a clean look */
+  border-radius: 20px;          /* Perfectly rounded pill shapes matching your layout */
+  font-family: 'Arial Black', Gadget, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;              /* Adds pointer hand cursor indication on hover */
+  user-select: none;            /* Stops accidental highlighting of text when clicking rapidly */
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: inline-block;        /* Ensures padding and width elements track correctly */
+}
+
+/* Hover & Interactive effects to make it feel responsive */
+.lang-toggle:hover {
+  background-color: #E6E6E6;    /* Subtle off-white shift on mouse hover */
+  opacity: 0.9;
+}
+
+
+
+/* ==========================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================== */
+
+@media (max-width: 768px) {
+  #render-title {
+    font-size: 2rem;
+  }
+  
+  .story-header-row {
+    flex-direction: column-reverse; /* Drops toggle button smoothly below titles or shifts blocks stackably */
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .lang-toggle {
+    align-self: flex-end; /* Pin toggle option clean on mobile frameworks */
+  }
+}

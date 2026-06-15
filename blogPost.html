@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Css for header and footer-->
+            <link rel="stylesheet" href="./CSS/header.css">
+            <link rel="stylesheet" href="./CSS/footer.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!--End of commend-->
+        <!--CSS for Blog Post page-->
+            <link rel="stylesheet" href="./CSS/blogpost.css">
+        <!--end of comment-->
+        <!--Js for Blog Page Data-->
+        <script src="./blogData.js"></script>
+    </head>
+
+    <body>
+        <header class="pc_header">
+            <div class="logo_container">
+                <a href="./index.html">
+                    <img src="./resources/TEDxUCSI Logo (White).webp" alt="TEDxUCSI University Logo" class="logo-img">
+                </a>
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="pc-nav">
+                <ul>
+                    <li> <a href="./index.html">Home</a> </li>
+                    <li> <a href="./about.html">About</a> </li>
+                    <li> <a href="./2026.html">2026</a> </li>
+                    <li> <a href="#">Team</a> </li>
+                    <li> <a href="">Blog</a> </li>
+                    <li> <a href="./FAQ.html">FAQ</a> </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="story-detail-section">
+            <div class="story-banner">
+                <img id="render-image" src="" alt="Story Banner Graphic">
+            </div>
+
+            <div class="story-content-wrapper">
+                
+                <div class="story-header-row">
+                <div class="title-meta-block">
+                    <h1 id="render-title">LOADING TITLE...</h1>
+                    <div class="story-metadata">
+                    <p><span id="meta-author-label">WRITTEN BY:</span> <span id="render-author" class="highlight-text">JAMI</span></p>
+                    <p id="render-datetime">12/6/2026 10PM</p>
+                    </div>
+                </div>
+                
+                <div class="lang-toggle" id="language-switcher" onclick="togglePostLanguage()">English/Chinese</div>
+                </div>
+
+                <div class="story-body-copy" id="render-content">
+                </div>
+
+            </div>
+            </section>
+
+            <script>
+            // This is your data repository inside blogpost.html
+                const comprehensiveArticles = {
+                    "Blog_Post_1": {
+                        image: "./resources/Blog Post Pic/Post_1.jpg", 
+                        EN: {
+                            datetime: "31st May 2026",
+                            author: "Djamilya Ishanova Nizamovna",
+                            title: "WHAT IS TEDX?",
+                            content: `
+                                <p>In a world filled with noise, <strong>ideas have the power to change everything</strong>. You’ve likely heard of the global TED conferences— where the world’s leading thinkers and innovators share their insights in powerful, short talks. But what happens when that global spirit lands right here on our campus? That’s where TEDx comes in.</p>
+                                
+                                <h3>The «x» Factor</h3>
+                                <p>TEDx is a mass initiative created in the spirit of TED’s mission, <em>«ideas worth spreading»</em>. The «x» stands for independently organized TED events. These local, self-organized gatherings bring people together to share a TED-like experience at the community level.</p>
+                                <p>For a university, hosting a TEDx event isn’t just an activity — it’s a responsibility. It's about curating the boldest, most innovative thoughts from our students, faculty, and local heroes, and launching them into the global conversation.</p>
+                                
+                                <h3>The TEDxUCSI Story</h3>
+                                <p>At UCSI University, we didn't just join the TEDx movement; we helped define it locally. The official TEDxUCSIUniversity chapter has been a hub of intellectual energy, producing some of the most memorable events on campus. While the legacy spans multiple years, you can trace the passion and evolution of our journey through past events.</p>
+                                
+                                <hr style="border-color: #333; margin: 30px 0;">
+
+                                <h3>Past Events Timeline</h3>
+                                
+                                <p><strong>1. Synchronization 2017: Get Your Life in Sync</strong><br>
+                                Life pulls us in many directions at once. Synchronization 2017 was born from this universal struggle, inviting attendees to seek balance between the personal and professional. When we are truly in sync, we become aware of where our interests touch, align, and meld into one another.</p>
+                                <p><em>Presenters included:</em> A.J Minai, Chris Lau, Christine Das, Dr Goh Aik Ping, Gurmit Singh, Shozo Yamaguchi, Sylvia Salow, Wee Hung Yee (Jeff), Maxy Chan, Eiffel Chong, BIHZHU, Son Of A Policeman (SOAP).</p>
+
+                                <p><strong>2. TEDxLive 2018</strong><br>
+                                TEDxLive 2018 was a bridge between our local community and the global TED Conference. This special event featured a live webcast of an official TED Conference, allowing our campus to experience the biggest ideas on the planet as they happened right from Kuala Lumpur.</p>
+
+                                <p><strong>3. Parallax 2018</strong><br>
+                                «Parallax» describes how an object appears to shift when viewed from different angles. Parallax 2018 turned this concept into a human lesson: recognizing that other perspectives are valid, even when they differ from our own.</p>
+                                <p><em>Presenters included:</em> Elmer Ho, Falk Au Yeong, Keith Rozario, Vivian Kuit, Yvonne Teo, Leza Parker, Stefano Virgilli, Kelvin Lai.</p>
+
+                                <p><strong>4. Mavericks and Misfits</strong><br>
+                                The most evocative title of all. Mavericks and Misfits celebrated the rebels and original thinkers who refuse to fit in boxes: <em>«The ones who create are the ones who challenge the existing system, the ones who have courage to dream and the will to pursue them»</em>.</p>
+                                <p><em>Presenters included:</em> Alaa Bakkar, Amanda Lau, Caleb Wong, Mark Louis Benedict, Myke Celis, Richard Ker, Rowena Morais, Marques Menon, Jeff Lau.</p>
+
+                                <hr style="border-color: #333; margin: 30px 0;">
+
+                                <h3>Looking Ahead</h3>
+                                <p>The past events have set an incredibly high bar. But the story of TEDxUCSI is still being written. And the next chapter is just around the corner.</p>
+                                <p class="highlight-text" style="font-weight: bold; font-size: 1.2rem;">Mark your calendars for November 14, 2026, as TEDxUCSIUniversity returns with a new theme: «Reading Beyond the Line».</p>
+                                <p>Are you ready to share your idea worth spreading?</p>
+                            `
+                        },
+                        ZH: {
+                            datetime: "31/5/2026",
+                            author: "Lim Xinying",
+                            title: "什么是 TEDX?",
+                            content: `
+                                <p>在这个充斥着各种声音的世界里，<strong>思想拥有改变一切的力量</strong>。你或许听说过 TED 全球大会 —— 全球顶尖的思想家和创新者们会在这场盛会中，通过简短而富有感染力的演讲分享自己的见解。但当这种影响全球的理念走进我们的校园，又会发生什么呢？这就是 TEDx 的意义所在。</p>
+                                
+                                <h3>“x” 的含义</h3>
+                                <p>TEDx 是一项大型活动项目，其设立初衷与 TED 的宗旨一脉相承，即<em>“传播有价值的思想”</em>。字母 “x” 代表独立组织的 TED 活动。这些由地方自主筹办的聚会，让人们汇聚一堂，在社区层面体验到与 TED 大会相同的思想交流氛围。</p>
+                                <p>对于一所大学而言，举办 TEDx 活动绝非只是一项普通活动，更是一份责任。其核心在于，从学生、教职工以及当地杰出人士中，发掘最具前瞻性、最具创新性的观点，并将这些观点推向全球思想交流的平台。</p>
+                                
+                                <h3>TEDxUCSI 的发展历程</h3>
+                                <p>在 思特雅大学（UCSI University），我们不仅参与到 TEDx 的发展浪潮中，更推动了这一理念在本地的发展。TEDxUCSIUniversity 官方团队一直是思想交流的核心阵地，举办了多场校园内极极具影响力的活动。过往的每一场活动，都清晰记录着我们的热情与成长。</p>
+                                
+                                <hr style="border-color: #333; margin: 30px 0;">
+
+                                <h3>历届活动回顾</h3>
+                                
+                                <p><strong>1. 2017 年 “同步：让生活井然有序”</strong><br>
+                                生活中，我们常常需要同时应对诸多事务，难免分身乏术。2017 年的 “同步” 活动旨在引导参与者探寻个人生活与职业发展之间的平衡之道。当我们真正实现生活与目标的同步，就能清晰看到自身兴趣的交汇点，进而让各方面发展协调一致、融为一体。</p>
+                                <p><em>演讲嘉宾包括：</em> A.J Minai、Chris Lau、Christine Das、Dr Goh Aik Ping、Gurmit Singh、Shozo Yamaguchi、Sylvia Salow、Wee Hung Yee (Jeff)、Maxy Chan、Eiffel Chong、BIHZHU、Son Of A Policeman (SOAP)。</p>
+
+                                <p><strong>2. 2018 年 TEDxLive</strong><br>
+                                2018 年的 TEDxLive 活动搭建起一座桥梁，将本地社区与全球 TED 大会紧密相连。这场特色活动通过网络直播的形式，同步呈现官方 TED 大会的全程内容，让校园里的师生在吉隆坡就能实时了解全球最前沿的思想动态。</p>
+
+                                <p><strong>3. 2018 年 “视差”</strong><br>
+                                “视差” 指的是物体因观察角度不同，而呈现出位置变化的视觉现象。2018 年的 “视差” 活动则将这一概念引申为一种处世智慧：要懂得尊重他人的观点，即便这些观点与自己的截然不同，也有其合理之处。融合不同视角，能让我们发掘更多可能性。</p>
+                                <p><em>演讲嘉宾包括：</em> Elmer Ho、Falk Au Yeong、Keith Rozario、Vivian Kuit、Yvonne Teo、Leza Parker、Stefano Virgilli、Kelvin Lai。</p>
+
+                                <p><strong>4. 特立独行者与打破常规者</strong><br>
+                                这是所有活动中最具深意的主题。“特立独行者与打破常规者” 旨在致敬那些不愿墨守成规、坚持自我的创新者：“真正的创造者，是那些敢于挑战现有体系、勇于追逐梦想并坚持到底的人。”</p>
+                                <p><em>演讲嘉宾包括：</em> Alaa Bakkar、Amanda Lau、Caleb Wong、Mark Louis Benedict、Myke Celis、Richard Ker、Rowena Morais、Marques Menon、Jeff Lau。</p>
+
+                                <hr style="border-color: #333; margin: 30px 0;">
+
+                                <h3>展望未来</h3>
+                                <p>过往的每一场活动，都为我们树立了极高的标杆。而 TEDxUCSI 的故事，还在继续书写。新的篇章即将开启。</p>
+                                <p class="highlight-text" style="font-weight: bold; font-size: 1.2rem;">请记下这个重要日期 —— 2026 年 11 月 14 日，TEDxUCSIUniversity 将再度启航，本届活动主题定为 “读懂字里行间之外的深意”。</p>
+                                <p>你是否已经准备好，来分享你心中那些值得传播的思想？</p>
+                            `
+                        }
+                    }
+                };
+
+                let currentPostLang = "EN"; 
+
+                function loadArticleTemplate() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    
+                    // Decodes the incoming URL ID parameters cleanly
+                    const targetId = urlParams.get('id') || "What is TEDx? by Javi"; 
+                    const passLang = urlParams.get('lang');
+                    
+                    if (passLang) currentPostLang = passLang.toUpperCase();
+
+                    renderPostContent(targetId);
+                }
+
+                function renderPostContent(id) {
+                    const articleData = comprehensiveArticles[id];
+
+                    if (articleData) {
+                        const activeLangData = articleData[currentPostLang];
+                        
+                        // Maps non-changing elements like the image banner
+                        document.getElementById('render-image').src = articleData.image;
+                        
+                        // 💡 FIX: Both author and date are now fetched dynamically from the language sub-blocks!
+                        document.getElementById('render-author').innerText = activeLangData.author;
+                        document.getElementById('render-datetime').innerText = activeLangData.datetime;
+                        
+                        // Handles label translation changes
+                        document.getElementById('meta-author-label').innerText = (currentPostLang === "ZH") ? "作者:" : "WRITTEN BY:";
+                        document.getElementById('render-title').innerText = activeLangData.title;
+                        document.getElementById('render-content').innerHTML = activeLangData.content;
+                    } else {
+                        document.getElementById('render-title').innerText = "ARTICLE NOT FOUND";
+                        document.getElementById('render-content').innerHTML = `<p>The data key "${id}" does not match your comprehensiveArticles object.</p>`;
+                    }
+                }
+
+                // FIX: Added the missing function that matches your button's onclick handler!
+                function togglePostLanguage() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const targetId = urlParams.get('id') || "What is TEDx? by Javi";
+                    
+                    // Switch between language string flags
+                    currentPostLang = (currentPostLang === "EN") ? "ZH" : "EN";
+                    
+                    // Redraw the text nodes instantly
+                    renderPostContent(targetId);
+                }
+
+                // Ensure it loads safely as soon as the HTML DOM nodes are fully parsed
+                document.addEventListener("DOMContentLoaded", loadArticleTemplate);
+            </script>
+
+        <footer class="footer">            
+            <div class="footer-logo-container">
+                <img src="./resources/TEDxUCSI Logo (White).webp" alt="TEDxUCSI University Logo" class="footer-tedx-logo">
+            </div>
+
+            <div class="contact-section">
+                <h3>CONTACT US</h3>
+                <div class="social-media-icons">
+                    <a href="mailto:tedxucsi2026@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/tedxucsi2026?igsh=a2pyb3RjNTJsa2dx"  target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/tedxucsi-university-1381083b3"  target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@tedxucsi20264?_r=1&_t=ZS-96Vn5EjVBw5"  target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61590696416373" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://xhslink.com/m/6y8RYC0QHMX" target="_blank" class="rednote-icon-btn">
+                        <span class="rednote-fa-wrapper">
+                            <i class="fa-solid fa-square"></i>
+                            <span class="rednote-inner-character">R</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <p class="license-text"> THIS INDEPENDENT TEDx EVENT IS OPERATED UNDER LICENSE FROM TED.</p>
+        </footer>
+    </body>
+</html>
