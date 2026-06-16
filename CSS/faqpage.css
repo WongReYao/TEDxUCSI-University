@@ -174,7 +174,7 @@
     }
 
     .faq-question-row h2 {
-        font-size: 0.95rem; /* Shrinks question titles to prevent text clipping lines */
+        font-size: 0.90rem;
         line-height: 1.4;
     }
 
