@@ -18,6 +18,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #FFFFFF;
+  padding-bottom: 10px;
 }
 
 .main-title {
