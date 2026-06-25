@@ -14,15 +14,14 @@ body{
     margin-bottom: 50px;
 }
 
-/* THE GRID CONTAINER */
 .team-grid {
     display: grid;
-    /* Automatically creates columns that are at least 280px wide */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Forces exactly 3 equal columns across the row */
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px; 
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px 30px;
+    padding: 10px 0 30px;
 }
 
 /* INDIVIDUAL TEAM CARDS */
@@ -64,6 +63,8 @@ body{
     font-size: 1.2rem; /*Adjusted sizing from 1.4 - 1.2*/
     letter-spacing: 2px;
     margin-bottom: 10px;
+    text-transform: uppercase;
+
 }
 
 .member-info {
@@ -79,6 +80,26 @@ body{
     color: #aaa; 
     font-size: 0.7rem;
     font-style: italic;
+}
+
+.team-category-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 60px auto; /* Adds deep vertical breathing room between your categories */
+    text-align: left; /* Aligns category headers to the left like your drawing */
+    padding: 0 20px;
+}
+
+.category-header-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e62b1e; /* Core TED Red underline indicator */
+    display: inline-block; /* Wraps the line directly to text length */
 }
 
 /* ===================================================
@@ -106,5 +127,16 @@ body{
 
     .member-role {
         font-size: 1.1rem;
+        text-transform:uppercase;
+    }
+
+    .team-category-wrapper {
+        margin-bottom: 40px;
+        text-align: center; /* Centers category lines neatly on mobile viewports */
+    }
+
+    .category-header-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
     }
 }
