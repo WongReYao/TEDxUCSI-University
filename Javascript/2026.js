@@ -18,13 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = card.getAttribute('data-title');
         const image = card.getAttribute('data-image');
         const bio = card.getAttribute('data-bio');
+        const imagePosition = card.getAttribute('data-image-position');
 
         // Inject the values into the shared popup panel layout
-        popupName.textContent = name;
-        popupTitle.textContent = title;
-        popupImg.src = image;
-        popupImg.alt = `${name} Photo`;
-        popupDescription.innerHTML = bio; // innerHTML allows <br> lines if needed
+        popupName.textContent = name || '';
+        popupTitle.textContent = title || '';
+        popupImg.src = image || '';
+        popupImg.alt = name ? `${name} Photo` : 'Speaker Photo';
+        popupImg.style.objectPosition = imagePosition || '';
+        popupDescription.innerHTML = bio || ''; // innerHTML allows <br> lines if needed
 
         // Trigger presentation transitions
         overlay.classList.add('active');

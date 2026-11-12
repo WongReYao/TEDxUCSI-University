@@ -1,10 +1,11 @@
-section.home-banner{
-    height:85vh;
+section.home-banner {
     width: 100%;
-    background-image: url(../resources/home_banner.webp);
-    background-size: cover;
-    background-position: content;
-    background-repeat: no-repeat;
+}
+
+.home-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 body{
@@ -111,15 +112,28 @@ a{
     text-decoration: underline;
 }
 
+/* Right Column Image Box Formatting */
+.home-image-column {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.campus-img {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: center 60%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
 /* ===================================================
    HOMEPAGE MOBILE MEDIA QUERIES (768px and below)
    =================================================== */
 @media (max-width: 768px) {
-    /* 1. Compress the Hero Banner frame for smaller devices */
-    section.home-banner {
-        height: 45vh;
-    }
-
     /* 2. THE GAP FIX: Tighten up the Countdown Section Container */
     section.Countdown-section {
         padding: 30px 20px 5px 20px !important; /* Heavily cuts down top and bottom empty spaces */
@@ -185,4 +199,15 @@ a{
         text-align: left;
     }
     
+    .home-image-column {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .campus-img {
+        max-width: 100%;
+        height: 250px;
+        object-position: center 60%;
+    }
 }
