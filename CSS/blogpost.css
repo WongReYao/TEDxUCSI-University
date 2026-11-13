@@ -90,6 +90,15 @@ body{
   margin-bottom: 20px;
 }
 
+.story-body-copy h3 {
+  color: #FFFFFF;
+  font-family: 'Arial Black', Gadget, sans-serif;
+  font-size: 1.5rem;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
 /* Language Switcher Pill Button Layout */
 .lang-toggle {
   background-color: #FFFFFF;    /* Solid white background so it pops off the black */
